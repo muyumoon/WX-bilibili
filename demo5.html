@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="li4">4</li>
+    </ul>
+
+    <script>
+    var ul = document.getElementById('ul')
+    var lis = document.getElementsByTagName('li')
+    var li4 = document.getElementsByClassName('li4')
+    console.log(li4)
+    // li4[0].addEventListener('click',function() {
+    //     console.log(1);
+        
+    // })
+    // li4[0].addEventListener('click',function() {
+    //     console.log(2);
+        
+    // })
+    // li4[0].onclick=function () {
+    //     console.log(1212)
+    //     this.onmouseover = function() {
+    //         alert(1)
+    //     }
+    // }
+    for (let i = 0; i < lis.length; i++) {
+        
+       lis[i].onclick=function() {
+        //    console.log(lis);
+        //    console.log(i);
+           
+        //    console.log(lis[i]);     
+           alert(lis[i].innerHTML)
+       }
+    }
+    // for (var i = 0; i < lis.length; i++) {
+    //     (function(j) {
+    //         lis[j].onclick=function() {
+    //     //    console.log(lis);
+    //     //    console.log(i);
+    //     //    console.log(lis[i]);     
+    //        alert(lis[j].innerHTML)
+    //    }
+    //     })(i)
+    // }
+    </script>
+</body>
+</html>

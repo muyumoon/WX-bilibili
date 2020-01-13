@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建闭包最常见的方式函数作为返回值
+        // function sum() {
+        //     var count = 0;
+        //     return function () {
+        //         count = count +1
+        //         console.log(count);
+
+        //     }
+        // }
+        // var fun = sum()
+        // fun()
+        // fun()
+        // fun()
+        // fun()
+
+
+        // function sum(n) {
+        //     if (n === 1) {
+        //         return 1;
+        //     }
+        //     return sum(n - 1) + n
+        // }
+        // console.log(sum(100));
+
+        // function sum(n) {
+        //     if (n >= 100) {
+        //         return n
+        //     }
+        //     return sum(n - 1) + n
+        // }
+        // console.log(sum(1));
+
+
+        // var arr = [2, 5, 4, 2, 1];
+        // var x;
+        // for (var i = 0; i < arr.length - 1; i++) {
+        //     for (var j = 0; j < arr.length - i - 1; j++) {
+        //         if (arr[j] > arr[j + 1]) {
+        //             x = arr[j + 1];
+        //             arr[j + 1] = arr[j];
+        //             arr[j] = x;
+        //         }
+        //     }
+        //     console.log("第" + (i + 1) + "趟排序后的数组是" + arr);
+        // }
+        // console.log(arr);
+
+
+
+        var arr = [10, 20, 15, 13, 11, 8, 7, 4];
+        var c;
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    c = arr[j + 1]
+                    arr[j + 1] = arr[j]
+                    arr[j] = c
+                }
+            }
+        }
+        console.log(arr);
+
+
+        var arr2 = [10,9,8,7,6,5,4,3,2]
+        var c;
+        // 第一趟遍历是控制冒泡的躺数
+        for (var i = 0; i < arr2.length-1; i++) {
+            // 第二趟是控制冒泡比较的数的个数
+           for (var g = 0; g < arr2.length-i-1; g++) {
+                if(arr2[j] > arr2[j+1]) {
+                    c = arr2[j]
+                    arr[j]  = arr2[j+1]
+                    arr[j+1] = c
+                }
+           }
+        }
+        console.log(arr2);
+        
+
+    </script>
+</body>
+
+</html>

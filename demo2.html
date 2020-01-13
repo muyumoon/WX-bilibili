@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dong">
+        1.position的四种参数：<br>
+    1.static：静态定位；默认值<br>
+    2.absolute：绝对定位：根据父容器进行偏移；会脱标<br>
+    3.relative：相对定位：相对于自身原来的位置；不脱标<br>
+    4.fixed：固定定位：相对于浏览器窗口的指定坐标，以body为准，会脱标<br>
+
+    2.css引入有哪几种方式？<br>
+    1.行内式：比较复杂，不推荐<br>
+    2.内嵌式：直接在body顶部的style标签中写样式；<br>
+    3.外链式：分为link和@import两种方式：<br>
+        link加载文件时是同时加载的，而import是等页面加载完毕再进行加载；<br>
+        link是XHTML标签，无兼容问题，而import低版本浏览器无法兼容<br>
+
+
+    3.清除浮动的几种方式：<br>
+    1.额外标签法：在结尾处加一个空div标签，写上clear:both;<br>
+    2.伪元素清除法：<br>
+    content:'',<br>
+    display:block;<br>
+    clear:both<br>
+    3.overflow：hidden<br>
+
+    4.移动端和PC端的适配<br>
+    移动端：可以用百分比布局，就是常用的流式布局，还有响应式开发:通过媒体查询的方式，在不同屏幕下的不同的样式，同时还可以借助boostrap的栅格系统还完成<br>
+    屏幕分为：<br>
+    超小屏：768px；<br>
+    小屏：768-992px<br>
+    中屏：992-1200px<br>
+    大屏：1200以上<br>
+
+    PC端适配：一般可以用版心做页面，还可以用流式布局和响应式布局配合<br>
+
+    5.Doctype的作用：声明的作用，分为<br>
+    分为严格模式（又称之为标准模式，是以W3C的标准还执行代码的解析渲染）<br>
+    混杂模式：又称之为怪异模式和兼容模式<br>
+
+    6.浏览器是如何加载网页的？<br>
+
+    7.浏览器的重绘和回流<br>
+    重绘：改变背景颜色之类的就是重绘，不会重新布局，<br>
+    回流：当元素的规模尺寸,页面布局需要重新构建，就是回流<br>
+    回流一定会触发重绘<br>
+
+    8.less和scss的区别<br>
+    1.less是基于js编译的，是在客户端直接进行处理，直接通过引入less.js就可使用，而scss是要安装ruby的，同是在服务端处理的；<br>
+
+    9.css3的新特性<br>
+    1.阴影 ：文字阴影：text-shadow，边框阴影：border-shadow<br>
+    2.盒子模型：box-sizing<br>
+    4.过渡：transition，主要是用来杀实现动画的<br>
+    5.自定义动画:@keyframes  from   to / 或者用百分比来写状态<br>
+    6.媒体查询：<br>
+    7.弹性布局<br>
+    8.转换：transform：translate，rotate，或者scale缩放<br>
+
+    10.css选择器的优先级：important > 行内样式 > ID选择器  > 类选择器  > 标签选择器 > 通配符选择器<br>
+
+    11.H5的新特性<br>
+    1.更加富有语义化的标签：header nav  footer aside section article<br>
+    2.音频、视频API：audio video <br>
+    3.本地储存：localstorage 、sessionstorage 、 cookie<br>
+    4.canvas：画布，也是动画的api，一般是css动画  》 canvas 》 js纯动画；ctx.然后调用各种方法
+    5.新的表单控件：我们之前常用的表单控件有text、password、checkout selected、 button 、submit。但是新增了一些如email 、 tel 、 url（完整的网址url）、number 、 datetime（时间） search 、等<br>
+    6.新增了操作DOM的新方法，以前是document.getElementById,或者getElementByClassName,getElementByName<br>
+    但是现在新增了document.querySelcctor   document.querySelcctorAll等方法<br>
+
+    var dong = document.ge<br>
+    
+    12. 本地储存的区别：localstorage 、 sessionstorage cookie  区别<br>
+    cookie：每次请求会自动携带，有效期限有限，在有效期限过期之前一直有效，即使浏览器页面和浏览器关闭，不过存储大小为4KB，比较小；<br>
+    sessionstorage：存储大小为5M左右，仅在浏览器窗口关闭前有效，无法一直保持；<br>
+    localstorage：存储大小为20M，永久有效；有一些相关的方法，localstorage.setitem,<br>localstorage.getitem localstorage.removeitem等方法<br>
+
+    13.JS的内置对象：Array/Object /Function / Math /String<br>
+    字符串常见的一些方法：indexOf()   找字符串下标的方法  slice() 截取字符串的方法， trim() 去除收尾空格的方法 字符串的拼接：+号或者concat() split() 将字符串分割成数组 subtring()和substr() 截取字符串的方法 <br>
+
+    数组的方法：push()添加方法，pop()删除方法， unshift() 在前面添加，shift() 在前面删除 reverse() 翻转数组 concat() 数组合并 indexof() 搜索数组的下标 sort() 排序的方法<br>
+
+    14.深拷贝和浅拷贝<br>
+    基本数据类型：number string  boolean undefinded null <br>
+    引用数据类型：就是复杂数据类型<br>
+    基本数据类型是保存在栈中，<br>
+    复杂数据类型是保存在堆中，然后再栈中有有一个指向堆的地址；<br>
+    浅拷贝：只会复制对象的引用的地址，新对象和旧对象共用同有一个堆的内存，改变新的对象值，旧的值也会改变；<br>
+    深拷贝：复制对象，会在堆中重新开辟一块内存空间，和旧对象不共用一个内存地址，改变新对象的值，不会改变旧对象的值<br>
+    实现深拷贝的三种方式：1用JSON的方式，2.可以用原生的JS，for in 的循环遍历，还有es6中的forEach<br>
+    JSON.parse和
+    JSON.stringify就是深拷贝<br>
+
+    15.new具体做什么:<br>
+    1.创建了一个新的空的对象，<br>
+    2.this变量指向了该对象，同时继承了该函数的原型<br>
+    3.新创建的对象由this引用，并且最后隐式返回this<br>
+
+    promise构造函数<br>
+
+
+    16.http的请求方式：<br>
+    浏览器给服务器的几种请求方式：<br>
+    get：获取<br>
+    post：向服务器发送请求更新数据<br>
+    put：也是更新<br>
+    delete：删除<br>
+    get和post的区别：<br>
+    get是通过url地址栏传输数据的，数据比较小，而且不安全，用户可以直接在url地址栏看得到，一般限制在2-8KB左右；<br>
+    post：是将数据存在请求头中，相对于get会安全一些，而且数据量也会多一些，默认是2M以内<br>
+
+
+    17.同源策略和跨域问题<br>
+    浏览器的同源策略：协议相同，端口号相同，域名相同；则称之为同源策略<br>
+    跨域问题：三种解决方式<br>
+    1.JSONP：直接用JSONP格式进行请求和返回：dataType用JSONP格式<br>
+    2.CORS（跨域资源共享，不限制访问对象）：这个前端不需要配置什么，是由后台配置的<br>
+    3. 反向代理：用Nginx配置反向代理<br>
+
+    18.常见的一些HTTP的状态码：<br>
+    200：成功请求  400：请求格式错误，请求语法有错； 401：用户暂时没有权限访问  404：请求失败，没有资源  500：服务器的错误<br>
+===============================<br>
+js基础
+1.作用域：一个变量的作用范围是有限制的，分为全局变量和局部变量，局部变量仅仅在他声明的作用域范围内有效；比如一个函数内部声明一个变量，该变量就仅仅只在函数内有效，但是当有很多函数嵌套的时候，如果该变量在该函数内，没找到，会一层一层的向外找，直到全局，这样形成的一个链式环境就叫作用域链
+
+2.闭包
+是指内部函数可以访问外部函数的变量形成的一个综合环境，称之为闭包；
+比如说一个简单的计数器，就可以用到闭包；
+function sum() {
+    var count = 0;
+    return function () {
+        count = count +1
+        console.log(count);
+        
+    }
+}
+var fun = sum()
+fun()
+fun()
+fun()
+fun()
+
+闭包：保证数据的安全性和持久性，因为内部函数要一直访问外部的变量，所以不会被销毁；而且外部函数也无法主动访问到内部函数的变量；
+同时也会造成内存泄漏问题，
+js中常见的内存泄漏问题 
+1.全局变量引发的内存泄漏 （比如你只赋值但是没有声明的全部变量，一般用严格模式解决）
+2.闭包引发的内存泄漏 （直接把变量重新赋值为null就可解决）
+3.dom清空或者删除，为清除绑定的事件引发的内存泄漏
+
+
+3.事件循环：event loop，是指浏览器或者node解决js的单线程运行的一种机制
+js中：任务分为两种：
+宏任务：定时器，延时器
+微任务：promise.then   catch都是微任务
+
+4.http要比https要更安全，因为在传输过程中加密了，http默认端口号是80，httmps默认端口号是443
+
+5.谈谈性能优化问题
+代码层面：避免使用css表达式，避免使用高级选择器，通配选择器。
+
+缓存利用：缓存Ajax，使用CDN，使用外部js和css文件以便缓存，添加Expires头，服务端配置Etag，减少DNS查找等
+
+请求数量：合并样式和脚本，使用css图片精灵，初始首屏之外的图片资源按需加载，静态资源延迟加载。
+
+请求带宽：压缩文件，开启GZIP，
+
+代码层面的优化
+
+用hash-table来优化查找
+
+少用全局变量
+
+用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能
+
+用setTimeout来避免页面失去响应
+
+缓存DOM节点查找的结果
+
+避免使用CSS Expression
+
+避免全局查询
+
+避免使用with(with会创建自己的作用域，会增加作用域链长度)
+
+多个变量声明合并
+
+避免图片和iFrame等的空Src。空Src会重新加载当前页面，影响速度和效率
+
+尽量避免写在HTML标签中写Style属性
+
+6.递归函数
+如果这个函数在函数内部直接或者间接的调用了自己，我们就称之为递归函数
+
+扩展运算符：就是遍历对象或者数组中的所有成员，拷贝到当前的对象中，是浅拷贝
+=======================================================================================<br>
+    vue的面试题<br>
+
+    1.vue中常见的一些指令<br>
+    v-bind:动态绑定属性，简写成：，<br>
+    v-on:监听事件，简写成@<br>
+    v-model:表单元素的双向数据绑定<br>
+    v-if：真实的条件渲染：他的原理是控制节点的创建和删除；<br>
+    v-show：也是条件渲染，但是他只是简单的控制css的切换；<br>
+    两个的使用场景：如果是要频繁的切换则用v-show，如果只是少量的改变则用v-if，像权限列表的渲染一般都是用的v-if来渲染<br>
+
+    v-for：循环遍历数组或者对象，通常要加key属性<br>
+    v-html和v-text,这个一般用于加载内容，但是用的比较少，我们都是用的插值表达式用的多一些<br>
+
+    2.vue的生命周期的理解<br>
+    beforeCreated：此时刚刚创建vue实例，上面即没有数据，也没有挂载DOM<br>
+    Creat：在这里已经有了数据，但是还是没有挂载DOM，但是此时你已经可以进行数据交互了；<br>
+    如果你要操作DOM最好执行在$nexttick()函数后面<br>
+    beforeMounted：这个函数中已经有了数据，而且有了挂载的DOM，但是是虚拟DOM，还未真正的渲染出来，<br>
+    Monted：此时是真正的渲染出来了<br>
+    beforeUpdated：更新数据，打补丁的方式进行更新<br>
+    update：<br>
+    beforeDestoryed：拆除组件，监听的事件，定时器之类的相关的东西<br>
+    destory<br>
+
+
+    3.组件之间的传值<br>
+    父子组件之间的传值<br>
+    父传子：直接在子组件中创建一个props成员：用来接收父组件传递过来的属性<br>
+    子传父：主要是通过$emit来进行传参数的，首先，在子组件里面的methods中通过$emit来触发一个自定义事件，包括你要传的值，然后在父组件中绑定一个相同的自定义事件，再在methods直接触发就好<br>
+
+    非父子之间的传参：先在一个组件的methods中通过bus.$emit触发一个自定义事件，然后再在另外一个组件中用bus.$on()接收就可以<br>
+    后代组件中的传递参数：<br>
+    还有provider和inject用来后代传递参数，但是这个比较少用到的，因为这个绑定不是响应式绑定，而且数据追踪起来会比较困难，所以能用vuex尽量用vuex<br>
+
+    4.调用子组件中的方法<br>
+    通过$refs来触发子组件中的方法，或者$emit和$on来调用子组件中的方法<br>
+
+    5.vue中watch的作用和computed的作用<br>
+    watch的作用：主要是用来监听数据的变化的，起到一个桥梁的作用，您直接在watch中执行一个函数，然后把新值和旧值作为形参传入。直接打印出来就好的；
+    另外，如果是复杂数据类型，就需要用到深度监听，deep：true；并且当对象中的属性发生变化时，
+    会自动执行handler函数，<br>
+
+    6.SPA单页面应用的优缺点？<br>
+    优点：一开始就是加载整个的html、js/css，一旦页面完成加载，后续跟随用户点击就不需要重复加载了，直接利用路由机制完成跳转；一些通用的组件不需要重新渲染；
+    前后端分离，使得业务逻辑更加清晰，架构，对服务器压力相对较小<br>
+
+    缺点：一开始加载因为要加载全部的资源，所以相对会比较慢，前进后退是由路由管理的，所以无法使用浏览器的前进后退功能；seo难度会比较大~~<br>
+
+    7.v-model数据双向绑定的原理：<br>
+    本质其实是语法糖，是通过v-bind绑定一个属性，并注册一个事件，通常是input事件或者change事件
+    input是通过v-bind绑定value属性，然后注册input事件，
+    select和checkbox则是绑定change事件<br>
+
+    8.什么是MVVM？<br>
+    MVVM是从后端的MVC演变过来的，很类似，M是model，数据模型层，V是view，视图层，VM是VIEWModel层，类似一个中间的桥梁的作用，他向上与View进行了数据双向绑定，向下与数据模型层进行数据请求交互；起到承上启下的作用<br>
+
+    9.watch和computed的区别<br>
+    computed:计算属性，他是依赖于其他属性的，并且会有缓存，只有当他依赖的属性发生变化时，才会重新计算这个属性；否则直接从缓存里面拿<br>
+
+    watch：更多的是起到一个监听的作用，监听数据的变化，只有当坚挺的额数据发生变化时，才会执行后续的回调操作<br>
+
+    应用场景：当我们需要依赖某个数值去进行数据计算时，用computed多一些；因为可以利用computed的缓存特性，避免每次拿值的时候都要重新计算；
+    watch更多的是监听作用，当监听的值发生变化的时候需要执行异步操作，就会用的多一些，这个<br>
+
+    10.直接给数组项赋值，vue能检测到他的变化吗？<br>
+    检测不到，因为当你直接通过数组的索引和更新数组的length更新响应式数据，vue是检测不到的，所以你需要借助vue.set方法来更新响应式数据，如果是更新length，你需要借助splice方法来操作<br>
+
+    11.vue.$nextTick()是当某个数据发生变化时，vue不会立即更新DOM，会有延迟，但是当你需要立即获得更新的DOM，就可以用$nextTick(),执行延迟回调，并立即获得更新后的DOM；<br>
+
+    12.在哪个生命周期函数内发送异步请求，可以在create/beforeMounted/mount都可以发送异步请求，但是推荐在create钩子函数中发送异步请求，会更快的获取数据，并且ssr渲染目前是不支持beforeMounted/mount，放在create中可以保证一致性<br>
+
+    13.父组件可以监听子组件中的生命周期钩子吗？<br>
+    可以，第一，可以通过$emit触发一个自定义事件来通知父组件，也可以通过@hook来监听指定的钩子和事件，更加简单方便<br>
+
+    14.vuex你有了解吗？<br>
+    vuex主要是状态管理工具，一般用于大型的项目管理；核心就是store<br>
+    分为五个模块：<br>
+    state：保存数据的地方，类似于vue中的data<br>
+    getter：计算属性：类似于computed，获取变化的数据；对state中的数据进行计算，<br>
+    通过this.$store.state.event方法来获取数据<br>
+    也是具有缓存性，只有当他的依赖数据发生变化时，才会重新计算；<br>
+
+    mutation：执行同步的方法；类似于methods；<br>
+    更改store状态中唯一的方法就是提交到mutation，提供的都是方法，有两个参数，如果要修改数据，必须通过this.$store.commit()方法,中间有两个参数，第一个就是mutation中的方法名，第二个是提交载荷payload，<br>
+
+    actions：执行异步的方法，修改state中的数据也是要先提交给mutation，通过context.commit方法提交给mutation，然后mutation再执行相应的操作<br>
+    
+    module：将单一的store拆分成多个store，<br>
+
+    vuex的状态管理储存是响应式的，不能直接更改状态，如果要更改的话，只能在mutation中更改 
+
+    15.ref和$ref的作用
+    ref可以通过给普通DOM元素添加ref属性；
+    $refs可以用来获取普通的DOM元素或者vue组件
+    this.$refs.组件名.组件中的方法；可以调用组件中的方法
+
+    </div>
+   <script>
+    //  1.position的四种参数：
+    // 1.static：静态定位；默认值
+    // 2.absolute：绝对定位：根据父容器进行偏移；会脱标
+    // 3.relative：相对定位：相对于自身原来的位置；不脱标
+    // 4.fixed：固定定位：相对于浏览器窗口的指定坐标，以body为准，会脱标
+
+    // 2.css引入有哪几种方式？
+    // 1.行内式：比较复杂，不推荐
+    // 2.内嵌式：直接在body顶部的style标签中写样式；
+    // 3.外链式：分为link和@import两种方式：
+    //     link加载文件时是同时加载的，而import是等页面加载完毕再进行加载；
+    //     link是XHTML标签，无兼容问题，而import低版本浏览器无法兼容
+
+
+    // 3.清除浮动的几种方式：
+    // 1.额外标签法：在结尾处加一个空div标签，写上clear:both;
+    // 2.伪元素清除法：
+    // content:'',
+    // display:block;
+    // clear:both
+    // 3.overflow：hidden
+
+    // 4.移动端和PC端的适配
+    // 移动端：可以用百分比布局，就是常用的流式布局，还有响应式开发:通过媒体查询的方式，在不同屏幕下的不同的样式，同时还可以借助boostrap的栅格系统还完成
+    // 屏幕分为：
+    // 超小屏：768px；
+    // 小屏：768-992px
+    // 中屏：992-1200px
+    // 大屏：1200以上
+
+    // PC端适配：一般可以用版心做页面，还可以用流式布局和响应式布局配合
+
+    // 5.Doctype的作用：声明的作用，分为
+    // 分为严格模式（又称之为标准模式，是以W3C的标准还执行代码的解析渲染）
+    // 混杂模式：又称之为怪异模式和兼容模式
+
+    // 6.浏览器是如何加载网页的？
+
+    // 7.浏览器的重绘和回流
+    // 重绘：改变背景颜色之类的就是重绘，不会重新布局，
+    // 回流：当元素的规模尺寸,页面布局需要重新构建，就是回流
+    // 回流一定会触发重绘
+
+    // 8.less和scss的区别
+    // 1.less是基于js编译的，是在客户端直接进行处理，直接通过引入less.js就可使用，而scss是要安装ruby的，同是在服务端处理的；
+
+    // 9.css3的新特性
+    // 1.阴影 ：文字阴影：text-shadow，边框阴影：border-shadow
+    // 2.盒子模型：box-sizing
+    // 4.过渡：transition，主要是用来杀实现动画的
+    // 5.自定义动画:@keyframes  from   to / 或者用百分比来写状态
+    // 6.媒体查询：
+    // 7.弹性布局
+    // 8.转换：transform：translate，rotate，或者scale缩放
+
+    // 10.css选择器的优先级：important > 行内样式 > ID选择器  > 类选择器  > 标签选择器 > 通配符选择器
+
+    // 11.H5的新特性
+    // 1.更加富有语义化的标签：header nav  footer aside section article
+    // 2.音频、视频API：audio video 
+    // 3.本地储存：localstorage 、sessionstorage 、 cookie
+    // 4.canvas：画布，也是动画的api，一般是css动画  》 canvas 》 js纯动画；ctx.然后调用各种方法
+    // 5.新的表单控件：我们之前常用的表单控件有text、password、checkout selected、 button 、submit。但是新增了一些如email 、 tel 、 url（完整的网址url）、number 、 datetime（时间） search 、等
+    // 6.新增了操作DOM的新方法，以前是document.getElementById,或者getElementByClassName,getElementByName
+    // 但是现在新增了document.querySelcctor   document.querySelcctorAll等方法
+
+    // var dong = document.ge
+    
+    // 12. 本地储存的区别：localstorage 、 sessionstorage cookie  区别
+    // cookie：每次请求会自动携带，有效期限有限，在有效期限过期之前一直有效，即使浏览器页面和浏览器关闭，不过存储大小为4KB，比较小；
+    // sessionstorage：存储大小为5M左右，仅在浏览器窗口关闭前有效，无法一直保持；
+    // localstorage：存储大小为20M，永久有效；有一些相关的方法，localstorage.setitem,localstorage.getitem localstorage.removeitem等方法
+
+    // 13.JS的内置对象：Array/Object /Function / Math /String
+    // 字符串常见的一些方法：indexOf()   找字符串下标的方法  slice() 截取字符串的方法， trim() 去除收尾空格的方法 字符串的拼接：+号或者concat() split() 将字符串分割成数组 subtring()和substr() 截取字符串的方法 
+
+    // 数组的方法：push()添加方法，pop()删除方法， unshift() 在前面添加，shift() 在前面删除 reverse() 翻转数组 concat() 数组合并 indexof() 搜索数组的下标 sort() 排序的方法
+
+    // 14.深拷贝和浅拷贝
+    // 基本数据类型：number string  boolean undefinded null 
+    // 引用数据类型：就是复杂数据类型
+    // 基本数据类型是保存在栈中，
+    // 复杂数据类型是保存在堆中，然后再栈中有有一个指向堆的地址；
+    // 浅拷贝：只会复制对象的引用的地址，新对象和旧对象共用同有一个堆的内存，改变新的对象值，旧的值也会改变；
+    // 深拷贝：复制对象，会在堆中重新开辟一块内存空间，和旧对象不共用一个内存地址，改变新对象的值，不会改变旧对象的值
+    // 实现深拷贝的三种方式：1用JSON的方式，2.可以用原生的JS，for in 的循环遍历，还有es6中的forEach
+    // JSON.parse和
+    // JSON.stringify就是深拷贝
+
+    // 15.new具体做什么:
+    // 1.创建了一个新的空的对象，
+    // 2.this变量指向了该对象，同时继承了该函数的原型
+    // 3.新创建的对象由this引用，并且最后隐式返回this
+
+    // promise构造函数
+
+
+    // 16.http的请求方式：
+    // 浏览器给服务器的几种请求方式：
+    // get：获取
+    // post：向服务器发送请求更新数据
+    // put：也是更新
+    // delete：删除
+    // get和post的区别：
+    // get是通过url地址栏传输数据的，数据比较小，而且不安全，用户可以直接在url地址栏看得到，一般限制在2-8KB左右；
+    // post：是将数据存在请求头中，相对于get会安全一些，而且数据量也会多一些，默认是2M以内
+
+
+    // 17.同源策略和跨域问题
+    // 浏览器的同源策略：协议相同，端口号相同，域名相同；则称之为同源策略
+    // 跨域问题：三种解决方式
+    // 1.JSONP：直接用JSONP格式进行请求和返回：dataType用JSONP格式
+    // 2.CORS（跨域资源共享，不限制访问对象）：这个前端不需要配置什么，是由后台配置的
+    // 3. 反向代理：用Nginx配置反向代理
+
+    // 18.常见的一些HTTP的状态码：
+    // 200：成功请求  400：请求格式错误，请求语法有错； 401：用户暂时没有权限访问  404：请求失败，没有资源  500：服务器的错误
+
+
+    // vue的面试题
+
+    // 1.vue中常见的一些指令
+    // v-bind:动态绑定属性，简写成：，
+    // v-on:监听事件，简写成@
+    // v-model:表单元素的双向数据绑定
+    // v-if：真实的条件渲染：他的原理是控制节点的创建和删除；
+    // v-show：也是条件渲染，但是他只是简单的控制css的切换；
+    // 两个的使用场景：如果是要频繁的切换则用v-show，如果只是少量的改变则用v-if，像权限列表的渲染一般都是用的v-if来渲染
+
+    // v-for：循环遍历数组或者对象，通常要加key属性
+    // v-html和v-text,这个一般用于加载内容，但是用的比较少，我们都是用的插值表达式用的多一些
+
+    // 2.vue的生命周期的理解
+    // beforeCreated：此时刚刚创建vue实例，上面即没有数据，也没有挂载DOM
+    // Creat：在这里已经有了数据，但是还是没有挂载DOM，但是此时你已经可以进行数据交互了；
+    // 如果你要操作DOM最好执行在$nexttick()函数后面
+    // beforeMounted：这个函数中已经有了数据，而且有了挂载的DOM，但是是虚拟DOM，还未真正的渲染出来，
+    // Monted：此时是真正的渲染出来了
+    // beforeUpdated：更新数据，打补丁的方式进行更新
+    // update：
+    // beforeDestoryed：拆除组件，监听的事件，定时器之类的相关的东西
+    // destory
+
+
+    // 3.组件之间的传值
+    // 父子组件之间的传值
+    // 父传子：直接在子组件中创建一个props成员：用来接收父组件传递过来的属性
+    // 子传父：主要是通过$emit来进行传参数的，首先，在子组件里面的methods中通过$emit来触发一个自定义事件，包括你要传的值，然后在父组件中绑定一个相同的自定义事件，再在methods直接触发就好
+
+    // 非父子之间的传参：先在一个组件的methods中通过bus.$emit触发一个自定义事件，然后再在另外一个组件中用bus.$on()接收就可以
+    // 后代组件中的传递参数：
+    // 还有provider和inject用来后代传递参数，但是这个比较少用到的，因为这个绑定不是响应式绑定，而且数据追踪起来会比较困难，所以能用vuex尽量用vuex
+
+    // 4.调用子组件中的方法
+    // 通过$refs来触发子组件中的方法，或者$emit和$on来调用子组件中的方法
+
+    // 5.vue中watch的作用和computed的作用
+    // watch的作用：主要是用来监听数据的变化的，起到一个桥梁的作用，您直接在watch中执行一个函数，然后把新值和旧值作为形参传入。直接打印出来就好的；
+    // 另外，如果是复杂数据类型，就需要用到深度监听，deep：true；并且当对象中的属性发生变化时，
+    // 会自动执行handler函数，
+
+    // 6.SPA单页面应用的优缺点？
+    // 优点：一开始就是加载整个的html、js/css，一旦页面完成加载，后续跟随用户点击就不需要重复加载了，直接利用路由机制完成跳转；一些通用的组件不需要重新渲染；
+    // 前后端分离，使得业务逻辑更加清晰，架构，对服务器压力相对较小
+
+    // 缺点：一开始加载因为要加载全部的资源，所以相对会比较慢，前进后退是由路由管理的，所以无法使用浏览器的前进后退功能；seo难度会比较大~~
+
+    // 7.v-model数据双向绑定的原理：
+    // 本质其实是语法糖，是通过v-bind绑定一个属性，并注册一个事件，通常是input事件或者change事件
+    // input是通过v-bind绑定value属性，然后注册input事件，
+    // select和checkbox则是绑定change事件
+
+    // 8.什么是MVVM？
+    // MVVM是从后端的MVC演变过来的，很类似，M是model，数据模型层，V是view，视图层，VM是VIEWModel层，类似一个中间的桥梁的作用，他向上与View进行了数据双向绑定，向下与数据模型层进行数据请求交互；起到承上启下的作用
+
+    // 9.watch和computed的区别
+    // computed:计算属性，他是依赖于其他属性的，并且会有缓存，只有当他依赖的属性发生变化时，才会重新计算这个属性；否则直接从缓存里面拿
+
+    // watch：更多的是起到一个监听的作用，监听数据的变化，只有当坚挺的额数据发生变化时，才会执行后续的回调操作
+    目前暂时只能监听基本数据类型，如果你要获取新值和旧值，您只需要再watch中执行一个回调函数，将新值和旧值作为参数传入，直接打印出来，但是如果要监听对象之类的复杂数据，就要用到deep，深度监听，并且还要调用handler函数；才能获取到新值和旧值
+
+    // 应用场景：当我们需要依赖某个数值去进行数据计算时，用computed多一些；因为可以利用computed的缓存特性，避免每次拿值的时候都要重新计算；
+    // watch更多的是监听作用，当监听的值发生变化的时候需要执行异步操作或者开销比较大的一些操作的时，就会用的多一些；
+
+    // 10.直接给数组项赋值，vue能检测到他的变化吗？
+    // 检测不到，因为当你直接通过数组的索引和更新数组的length更新响应式数据，vue是检测不到的，所以你需要借助vue.set方法来更新响应式数据，如果是更新length，你需要借助splice方法来操作
+
+    // 11.vue.$nextTick()是当某个数据发生变化时，vue不会立即更新DOM，会有延迟，但是当你需要立即获得更新的DOM，就可以用$nextTick(),执行延迟回调，并立即获得更新后的DOM；
+
+    // 12.在哪个生命周期函数内发送异步请求，可以在create/beforeMounted/mount都可以发送异步请求，但是推荐在create钩子函数中发送异步请求，会更快的获取数据，并且ssr渲染目前是不支持beforeMounted/mount，放在create中可以保证一致性
+
+    // 13.父组件可以监听子组件中的生命周期钩子吗？
+    // 可以，第一，可以通过$emit触发一个自定义事件来通知父组件，也可以通过@hook来监听指定的钩子和事件，更加简单方便
+
+    // 14.vuex你有了解吗？
+    // vuex主要是状态管理工具，一般用于大型的项目管理；核心就是store
+    // 分为五个模块：
+    // state：保存数据的地方，类似于vue中的data
+    // getter：计算属性：类似于computed，获取变化的数据；对state中的数据进行计算，
+    // 通过this.$store.state.event方法来获取数据
+    // 也是具有缓存性，只有当他的依赖数据发生变化时，才会重新计算；
+
+    // mutation：执行同步的方法；类似于methods；
+    // 更改store状态中唯一的方法就是提交到mutation，提供的都是方法，有两个参数，如果要修改数据，必须通过this.$store.commit()方法,中间有两个参数，第一个就是mutation中的方法名，第二个是提交载荷payload，
+
+    // actions：执行异步的方法，修改state中的数据也是要先提交给mutation，通过context.commit方法提交给mutation，然后mutation再执行相应的操作
+    
+    // module：将单一的store拆分成多个store，
+
+    // vuex的状态管理储存是响应式的，不能直接更改状态，如果要更改的话，只能在mutation中更改
+
+    // 15.vue组件之间的数据双向绑定：子组件中的methods方法通过触发$emit将自定义事件附加要传的值；父组件做该方法的监听就可得到该值；父组件的值发生变化时，子组件通过props接收父组件的值；
+    
+    // 16.axios怎么解决跨域问题；一般axios是不支持JSONP的，一般是用反向代理来实现跨域的
+
+    17.$nextTick()方法：因为vue是异步更新DOM的，所以如果你需要立即或者更新后的DOM，就可用这个方法，参数一般是一个回调参数；您直接执行就可获取到更新后的DOM
+
+    18.如果你要动态的给vue中data中的对象添加新属性，视图是不会更新的，你需要调用this.$set方法(对象，属性，属性值)；
+
+    18.$route和$router的区别，
+    $route是路由信息对象，里面存放着path、params、hash等路由信息参数
+    $router则是路由的实例对象，上面有一些路由跳转的方法：比如push、replace、go
+    replace方法是不会再history添加记录的，所以无法使用浏览器的前进后退功能
+
+    路由之间的传参：
+    1.可以通过route-view标签中的to来进行传参；
+    2.利用动态路由中的path进行传参数
+    3.通过name属性来匹配路由，再通过params进行传参
+
+    vue如何优化首屏加载速度
+    1.使用内容分发网络直接部署第三方资源（CDN）
+    2.将组件定义成函数，使用异步组件加载组件，调用require方法执行
+    3.开启GZIP压缩
+
+    项目中的功能：
+    1.一开始用的mock.js模仿的假数据，后面后端给了接口，但是完成之后检查发现，每次页面刷新的时候，整个vuex的数据就会丢失，加载不出来了；
+    后面找了一下原因是因为vuex中的所有数据都保存在运存中的，每次刷新页面都要重新加载vue实例，store中的数据就会初始化；所以导致没数据；
+    怎么解决：
+    1.在created钩子函数中用，加载页面的时候直接从本地存储中读取，然后再用this.$store.repalceState方法代替store中的初始化的数据；
+    2.在页面刷新的时候通过beforeunload方法直接将数据存储到本地储存中，
+    这里同时还要用到一个vuex的插件persisitedState的插件，保持数据的持久化；
+
+    2.element-ui  table表格有的时候回出现不对齐问题，出现偏移问题；
+    解决方案：项目入口文件app.vue中设一个整体样式；display: table-cell;
+
+    3.权限登录功能
+    当我们在登录页面登录的时候，发送ajax，从后台获取信息中会通过全局的路由钩子进行拦截，当你获取的数据中有一个角色id，和token令牌的时候，这边才会调用next方法，让您登录进去，如果没有的话
+    
+    我们会利用全局的路由钩子beforeEach去进行拦截，当发送ajax的时候，服务器会判断后台数据库中是否有这个角色id，如果没有，就重定向到登录页面，如果有的话，会附带一个token值（唯一的标识）传递过来，就直接调转到首页；（表示登录成功），但是在跳转之前，我们会把这个唯一的token存放到本地储存中；后续你再登录的话就直接从本地存储中读取；
+
+    ===============================================================<br>
+    jquery常见的一些方法
+    设置css的样式的方法：.css()/ addClass()/removeClass()移除样式、、/toggleCLass切换样式
+
+    设置属性：attr() /removeattr()移除属性
+    prop：也是设置属性，一般用于checked、selected、disabled等boolean值的属性；
+
+    动画效果：show()/ hide() /slideUp()滑入/slideDown()滑出 fedeIn()淡入/fadeOut()淡出
+    animate()/自定义动画
+
+    节点的方法：append/appendTo/remove/pretend/pretendTo/empty()/clone
+    或者表单元素的值：.val()
+    .html()/.text()
+
+    绑定事件：on()/off()bind()/unbind()
+    触发事件：click() trigger()
+
+    数组和字符串常见的一些方法：
+    数组：push、pop、unshift、shift、reverse、sort、concat、slice、splice
+    字符串：trim、toUpperCase/tolowerCase/indexof/slite/
+    
+    axios是基于promise的HTTP客户端
+    主要的成员有：methods、url、data、params：还有then和catch等方法
+    
+    状态码：200请求成功，400请求格式错误，403没有权限访问，404找不到资源
+    500是服务器那边的问题；
+    3开头的主要用来做页面的重定向，需要再客户端进一步操作才能完成
+   </script>
+</body>
+</html>
